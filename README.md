@@ -1,3 +1,12 @@
+# Citrus fork of Aws Maven Wagon
+Changes include updating the AWS SDK version to one that supports session tokens.
+
+Also running `mvn deploy` should fail since this plugin requires itself to upload the contents to S3.
+To get around this issue, just need to change the version of the modified plugin to something temporary
+and run `mvn install`. Then Change the version back to the one that is supposed to be released but make
+the plugin dependent to the temporary version. 
+
+
 # AWS Maven Wagon
 This project is a [Maven Wagon][wagon] for [Amazon S3][s3].  In order to to publish artifacts to an S3 bucket, the user (as identified by their access key) must be listed as an owner on the bucket.
 
